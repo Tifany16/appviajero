@@ -1,0 +1,772 @@
+
+
+/* Variables */
+$fondo_splash: rgba(0, 0, 0, 0.611);
+$fondo_home: white;
+$fondo_login:white;
+$fondo_perfil: white;
+$fondo_restaurantes: white;
+$fondo_ruta: white;
+$fondo_validacion: white;
+
+$fondo_general: white;
+$color_principal: #07294d;
+$color_secundario: #ccc;
+$color_texto: white;
+
+/* Estilos generales del body */
+body {
+  background-color: #f4f4f4;
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: Arial, sans-serif;
+  font-size: 14px; /* Ajustar tamaño de fuente globalmente */
+}
+
+/* Estilos generales para las secciones */
+section {
+  width: 360px;
+  height: 740px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: white;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+/* Estilos específicos para el splash */
+#splash {
+  background-color: $fondo_splash;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* Estilos para el texto del splash */
+.splash-text {
+  color: #fff;
+  text-align: center;
+  margin-top: 20px;
+
+  h1 {
+    font-size: 20px;
+    margin: 0;
+  }
+
+  p {
+    font-size: 12px;
+    margin: 0;
+  }
+}
+
+/* Estilos para logos */
+.logo, .logo-splash {
+  width: 150px;
+  margin-bottom: 20px;
+  margin-top: 60px;
+}
+
+/* Estilos para los formularios */
+form {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Estilos para inputs */
+input {
+  width: 80%;
+  padding: 10px 5px;
+  margin: 10px 0;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+
+  &:focus {
+    border-color: $color_principal;
+    outline: none;
+  }
+}
+
+/* Estilos para enlaces */
+a {
+  color: $color_principal;
+  text-decoration: none;
+  font-size: 14px;
+  margin-top: 10px;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+/* Estilos para botones */
+button, .btn-enviar {
+  width: 80%;
+  padding: 10px;
+  margin: 10px auto;
+  border-radius: 5px;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+  background-color: $color_principal;
+  color: $color_texto;
+}
+
+/* Clases adicionales */
+.ocultar {
+  display: none;
+}
+
+/* Estilos generales para la vista "home" */
+.view {
+  width: 360px;
+  height: 740px;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+/* Estilos para la barra de navegación */
+.navbar {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 20px;
+  font-weight: bold;
+  background-color: black;
+  color: $color_texto;
+  padding: 10px 0;
+}
+
+/* Ocultar la página principal cuando no se esté usando */
+.hidden {
+  display: none;
+}
+
+/* Estilos para la imagen principal */
+.main-image {
+  width: 315px;
+  height: 200px;
+  background-color: #ddd;
+  margin-bottom: 0px;
+  overflow: hidden;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+/* Estilos para la descripción */
+.description {
+  margin: 20px 0;
+}
+
+/* Estilos para la ubicación */
+.location {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10px;
+
+  img {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+  }
+}
+
+/* Estilos para los botones de la página */
+.buttons {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 20px;
+}
+
+.button {
+  background-color: $color_secundario;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+/* Estilos para la barra de navegación */
+
+nav img.logo {
+  height: 10px;
+  width: auto;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  margin: 0;
+}
+
+nav ul li {
+  margin-left: 20px;
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 10px; /* Reducir el tamaño del texto en la navegación */
+}
+nav ul li a:hover {
+  text-decoration: underline;
+}
+
+/* Estilos para la sección principal */
+/* Centrar el logo */
+nav img.logo {
+  height: 15px;
+  width: auto;
+  margin: 0 auto;
+  display: block; /* Asegura que el logo esté centrado */
+}
+
+/* Separar los botones */
+.buttons .button {
+  padding: 10px;
+  margin: 20px 10px; /* Ajustar el margen para mayor separación */
+  font-size: 16px;
+  border: none;
+  background-color: $color_principal;
+  color: $color_texto;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* Eliminar margen de la imagen principal */
+.main-image img {
+  width: 100%;
+  max-width: none; /* Asegura que no tenga márgenes ni límites */
+  height: auto;
+  margin-top: 0; /* Eliminar margen superior */
+}
+
+/* Extender la barra de navegación (parte negra) */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgb(0, 0, 0);
+  padding: 5px 10px;
+  height: 40px;
+  color: white;
+  position: relative;
+  top: 0;
+  left: 0;
+}
+/* Estilos para la ubicación */
+.icon img {
+  width: 60px; /* Agrandar un poco más el ícono de ubicación */
+  height: auto;
+}
+
+/* Sección de Restaurantes */
+.restaurant-section {
+  padding: 20px;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin-top: 20px;
+  text-align: center;
+}
+
+.restaurant-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.restaurant-card {
+  background-color: #f4f4f4;
+  border-radius: 10px;
+  padding: 10px;
+  text-align: center;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.restaurant-card img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.restaurant-card h3 {
+  font-size: 14px;
+  margin-top: 10px;
+}
+
+.location {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 5px;
+}
+
+.location img {
+  width: 15px;
+  height: 15px;
+  margin-right: 5px;
+}
+
+.location p {
+  font-size: 12px;
+  color: #555;
+}
+
+/* Vista de Perfil */
+#perfil-view {
+  display: none; /* Oculto inicialmente */
+  width: 360px;
+  height: 740px;
+  background-color: $fondo_general;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  padding: 20px;
+  box-sizing: border-box;
+  border-radius: 10px;
+}
+
+/* Estilos para los datos del perfil */
+.profile-info {
+  margin: 20px 0;
+}
+
+.profile-info h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.profile-info p {
+  font-size: 14px;
+  color: #555;
+  margin: 5px 0;
+}
+
+/* Estilos para el botón de cerrar sesión */
+.logout-button {
+  background-color: $color_principal;
+  color: $color_texto;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-top: 20px;
+}
+
+/* Otros ajustes generales para la vista del perfil */
+
+
+#perfil-view h2 {
+  font-size: 24px;
+  margin: 20px 0;
+}
+
+.profile-container {
+  text-align: center; /* Centrar la imagen y el contenido */
+  padding: 20px;
+}
+
+.profile-image {
+  max-width: 100%; /* Asegura que la imagen no sea más grande que su contenedor */
+  width: 50%; /* Ajusta este valor para cambiar el tamaño de la imagen */
+  height: auto; /* Mantiene la proporción de la imagen */
+  border-radius: 50%; /* Añade bordes redondeados, si lo deseas */
+}
+.right-button {
+  position: absolute;
+  top: 50%;
+  right: 10%;
+  transform: translateY(-50%);
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.right-button:hover {
+  background-color: #0056b3;
+}
+
+
+#main-view {
+  position: relative;
+}
+
+.right-button {
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.right-button:hover {
+  background-color: #0056b3;
+}
+
+.view {
+  display: none;
+}
+
+.view.active {
+  display: block;
+}
+
+.buttons {
+  margin-top: 20px;
+}
+
+.button {
+  padding: 10px 20px;
+  margin: 10px;
+  border: none;
+  background-color: #007bff;
+  color: white;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.button:hover {
+  background-color: #0056b3;
+}
+
+/* Estilos para la vista de Mis Rutas */
+#misrutas-view {
+  .routes-section {
+    padding: 20px;
+    h2 {
+      color: $color_principal;
+    }
+    p {
+      color: $color_secundario;
+    }
+  }
+}
+.navigation-arrows {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  justify-content: space-between;
+  width: 80%;
+  z-index: 10;
+}
+
+.arrow-btn {
+  background: rgba(0, 0, 0, 0.5);
+  border: none;
+  color: white;
+  font-size: 24px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.arrow-btn:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.ruta {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.imagenes-container {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 10px;
+}
+
+.imagen-placeholder {
+  width: 100px;
+  height: 100px;
+  background-color: #f0f0f0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.placeholder-content {
+  width: 80%;
+  height: 80%;
+  background-color: #ddd;
+}
+
+.linea-tiempo {
+  position: relative;
+  height: 2px;
+  background-color: #000;
+  margin: 20px 0;
+}
+
+.marcador {
+  width: 10px;
+  height: 10px;
+  background-color: #000;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.marcador:first-child {
+  left: 0;
+}
+
+.marcador:last-child {
+  right: 0;
+}
+
+.validar-btn {
+  margin-top: 10px;
+  padding: 5px 10px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.validar-btn:hover {
+  background-color: #0056b3;
+}
+
+/* ... (estilos existentes) ... */
+
+.main-image {
+  position: relative;
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+}
+
+.main-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.navigation-arrows {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  transform: translateY(-50%);
+  display: flex;
+  justify-content: space-between;
+  padding: 0 10px;
+}
+
+.arrow-btn {
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  font-size: 18px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+/* Estilos para la sección de Mis Rutas */
+.ruta {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.imagenes-container {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 20px;
+}
+
+.imagen-placeholder {
+  width: 100px;
+  height: 100px;
+  background-color: #f0f0f0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.placeholder-content {
+  width: 80%;
+  height: 80%;
+  background-color: #ddd;
+}
+
+.imagen-placeholder p {
+  margin-top: 5px;
+  font-size: 12px;
+}
+
+.linea-tiempo {
+  position: relative;
+  height: 2px;
+  background-color: #000;
+  margin: 20px 0;
+}
+
+.marcador {
+  width: 10px;
+  height: 10px;
+  background-color: #000;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.validar-btn {
+  margin-top: 10px;
+  padding: 5px 10px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.validar-btn:hover {
+  background-color: #0056b3;
+}
+
+
+/* ... (estilos existentes sin cambios) ... */
+
+.main-image {
+  position: relative;
+  width: 315px;
+  height: 200px;
+  margin-bottom: 20px;
+  overflow: hidden;
+}
+
+.main-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+
+
+
+
+.main-image {
+  position: relative;
+  width: 315px;
+  height: 200px;
+  margin-bottom: 20px;
+  overflow: hidden;
+}
+
+.main-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Estilos para la sección de imagen principal y flechas de navegación */
+.main-image {
+  position: relative;
+  width: 315px;
+  height: 200px;
+  margin-bottom: 10px; /* Reducido para acercar las flechas a la imagen */
+  overflow: hidden;
+}
+
+.main-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.navigation-arrows {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 25px;
+  margin-top: 5px; /* Añadido para separar las flechas de la imagen */
+}
+
+.arrow-btn {
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  width: 40px; /* Aumentado para mejor visibilidad */
+  height: 40px; /* Aumentado para mejor visibilidad */
+  border-radius: 50%;
+  font-size: 18px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.arrow-btn:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Asegúrate de que el contenedor principal tenga suficiente espacio */
+#main-view, #main2-view {
+  padding-bottom: 60px; /* Ajusta según sea necesario */
+  position: relative;
+}
+
+/* Estilos para las imágenes en la ruta */
+.ruta-imagen {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+.imagen-placeholder {
+  width: 100px;
+  height: 100px;
+  overflow: hidden;
+  border-radius: 5px;
+  margin-bottom: 5px;
+}
+
+.lugar-ruta {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
+}

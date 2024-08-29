@@ -1,0 +1,322 @@
+
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=360, initial-scale=1.0">
+    <title>Goonogo</title>
+    <link rel="stylesheet" href="css/main.scss">
+</head>
+<body>
+
+    <!-- Sección de pantalla de bienvenida (Splash) -->
+    <section id="splash">
+        <img src="images/goonogo copia.png" alt="Logo Goonogo" class="logo-splash">
+        <div class="splash-text">
+            <h1>Goonogo</h1>
+            <p>Vive al máximo</p>
+        </div>
+    </section>
+
+    <!-- Sección del formulario de inicio de sesión -->
+    <section id="login-form" style="display:none;">
+        <img src="images/goonogo copia.png" alt="Logo Goonogo" class="logo">
+        <h2>Ingresa a tu cuenta</h2>
+        <form id="loginForm">
+            <input type="email" id="email" placeholder="Ingrese su correo" required>
+            <input type="password" id="password" placeholder="Ingrese su contraseña" required>
+            <a href="#" id="forgot-password-link">¿Olvidaste tu contraseña?</a><br><br><br>
+            <button type="submit" class="btn-enviar">Ingresar</button>
+        </form>
+        <p>¿No tienes cuenta?</p> 
+        <a href="#" id="create-account">Crear cuenta</a>
+    </section>
+
+    <!-- Sección del formulario de registro -->
+    <section id="register-form" style="display:none;">
+        <img src="images/goonogo copia.png" alt="Logo Goonogo" class="logo">
+        <h2>Regístrate</h2>
+        <form id="registerForm">
+            <input type="text" id="nombre" placeholder="Ingrese su nombre" required>
+            <input type="text" id="apellido" placeholder="Ingrese su apellido" required>
+            <input type="email" id="register-email" placeholder="Ingrese su correo" required>
+            <input type="password" id="register-password" placeholder="Ingrese su contraseña" required>
+            <input type="password" id="confirm-password" placeholder="Confirmar contraseña" required>
+            <button type="submit" class="btn-enviar">Registrar</button>
+        </form>
+        <p>¿Ya tienes cuenta? <a href="#" id="login-link">Inicia sesión</a></p>
+    </section>
+
+    <!-- Sección de Pantalla Principal -->
+    <section id="main-view" class="view" style="display:none;">
+        <nav>
+            <img src="images/goonogo copia.png" alt="Logo Goonogo" class="logo">
+            <ul>
+                <li><a href="#main" id="lugares-btn">Lugares</a></li>
+                <li><a href="#misrutas" id="misrutas-btn">Mis rutas</a></li>
+                <li><a href="#perfil" id="perfil-btn">Perfil</a></li>
+            </ul>
+        </nav>
+
+        <h1>Medellín</h1>
+        <div class="icon">
+            <img src="images/mapa.png" alt="Icono Ciudad">
+        </div>
+
+        <div class="main-image">
+            <img src="images/pueblitoPaisa-1.jpg" alt="Imagen Principal">
+        </div>
+        
+        <div class="navigation-arrows">
+            <button id="prev-arrow" class="arrow-btn">&larr;</button>
+            <button id="next-arrow" class="arrow-btn">&rarr;</button>
+        </div>
+
+
+        <div class="description">
+            <h2>Pueblito Paisa</h2>
+            <p>El Pueblito Paisa en Medellín es una réplica encantadora de un típico pueblo antioqueño, ubicado en el Cerro Nutibara. Ofrece vistas panorámicas de la ciudad y una inmersión en la cultura paisa con su arquitectura tradicional y ambiente tranquilo.</p>
+            <div class="location">
+                <img src="images/ubicacion.png" alt="Icono de Ubicación">
+                <span>Cerro Nutibara, Medellín, Antioquia, Colombia.</span>
+            </div>
+        </div>
+
+        <div class="buttons">
+            <button class="button" id="restaurantes-btn">Restaurantes</button>
+            <button class="button" id="agregar-btn-pueblito">Agregar</button>
+        </div>
+    </section>
+
+    <!-- Sección de Pantalla Principal (Comuna 13) -->
+    <section id="main2-view" class="view" style="display:none;">
+        <nav>
+            <img src="images/goonogo copia.png" alt="Logo Goonogo" class="logo">
+            <ul>
+                <li><a href="#main" id="lugares-btn">Lugares</a></li>
+                <li><a href="#misrutas" id="misrutas-btn">Mis rutas</a></li>
+                <li><a href="#perfil" id="perfil-btn">Perfil</a></li>
+            </ul>
+        </nav>
+
+        <h1>Medellín</h1>
+        <div class="icon">
+            <img src="images/mapa.png" alt="Icono Ciudad">
+        </div>
+
+        <div class="main-image">
+            <img src="images/comuna13.png" alt="Imagen Principal">
+            
+    
+        </div>
+
+        <div class="navigation-arrows">
+            <button id="prev-arrow" class="arrow-btn">&larr;</button>
+            <button id="next-arrow" class="arrow-btn">&rarr;</button>
+        </div>
+
+        <div class="description">
+            <h2>Comuna 13</h2>
+            <p>La Comuna 13 de Medellín es famosa por su vibrante arte callejero y su transformación social desde tiempos de conflicto. Es un símbolo de resiliencia y creatividad, ofreciendo coloridos murales y vistas panorámicas de la ciudad ademas refleja la historia y el espíritu innovador.</p>
+            <div class="location">
+                <img src="images/ubicacion.png" alt="Icono de Ubicación">
+                <span>Comuna 13, Medellín, Antioquia, Colombia.</span>
+            </div>
+        </div>
+
+        <div class="buttons">
+            <button class="button" id="restaurantes2-btn">Restaurantes</button>
+            <button class="button" id="agregar-btn-comuna13">Agregar</button>
+        </div>
+    </section>
+
+    <!-- Sección de mis rutas -->
+    <section id="misrutas-view" class="view" style="display:none;">
+        <nav>
+            <img src="images/goonogo copia.png" alt="Logo Goonogo" class="logo">
+            <ul>
+                <li><a href="#main" id="lugares-btn">Lugares</a></li>
+                <li><a href="#misrutas" id="misrutas-btn">Mis rutas</a></li>
+                <li><a href="#perfil" id="perfil-btn">Perfil</a></li>
+            </ul>
+        </nav>
+
+            <h2>Mis Rutas</h2>
+            <div id="rutas-container"></div>
+        
+    </section>
+
+
+
+    <!-- Sección de Restaurantes -->
+    <section class="view" id="restaurantes-view" style="display: none;">
+        <div class="header">
+            <nav>
+                <img src="images/goonogo copia.png" alt="Logo Goonogo" class="logo">
+                <ul>
+                    <li><a href="#main" id="lugares-btn">Lugares</a></li>
+                    <li><a href="#misrutas" id="misrutas-btn">Mis rutas</a></li>
+                    <li><a href="#perfil" id="perfil-btn">Perfil</a></li>
+                </ul>
+            </nav>
+        </div>
+
+        <div class="restaurant-section">
+            <h2>Restaurantes</h2>
+            <div class="restaurant-grid">
+                <div class="restaurant-card">
+                    <img src="images/pueblitoPaisa-1.jpg" alt="Restaurante Tradición Paisa">
+                    <h3>Restaurante Tradición Paisa</h3>
+                    <div class="location">
+                        <img src="images/ubicacion.png" alt="Ubicación">
+                        <p>Cerro Nutibara, Medellín, Antioquía, Colombia.</p>
+                    </div>
+                </div>
+                <div class="restaurant-card">
+                    <img src="images/pueblitoPaisa-1.jpg" alt="Restaurante Tradición Paisa">
+                    <h3>Restaurante Tradición Paisa</h3>
+                    <div class="location">
+                        <img src="images/ubicacion.png" alt="Ubicación">
+                        <p>Cerro Nutibara, Medellín, Antioquía, Colombia.</p>
+                    </div>
+                </div>
+                <div class="restaurant-card">
+                    <img src="images/pueblitoPaisa-1.jpg" alt="Restaurante Tradición Paisa">
+                    <h3>Restaurante Tradición Paisa</h3>
+                    <div class="location">
+                        <img src="images/ubicacion.png" alt="Ubicación">
+                        <p>Cerro Nutibara, Medellín, Antioquía, Colombia.</p>
+                    </div>
+                </div>
+                <div class="restaurant-card">
+                    <img src="images/pueblitoPaisa-1.jpg" alt="Restaurante Tradición Paisa">
+                    <h3>Restaurante Tradición Paisa</h3>
+                    <div class="location">
+                        <img src="images/ubicacion.png" alt="Ubicación">
+                        <p>Cerro Nutibara, Medellín, Antioquía, Colombia.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección de Restaurantes2 -->
+    <section class="view" id="restaurantes2-view" style="display: none;">
+        <div class="header">
+            <nav>
+                <img src="images/goonogo copia.png" alt="Logo Goonogo" class="logo">
+                <ul>
+                    <li><a href="#main" id="lugares-btn">Lugares</a></li>
+                    <li><a href="#misrutas" id="misrutas-btn">Mis rutas</a></li>
+                    <li><a href="#perfil" id="perfil-btn">Perfil</a></li>
+                </ul>
+            </nav>
+        </div>
+
+        <div class="restaurant-section">
+            <h2>Restaurantes</h2>
+            <div class="restaurant-grid">
+                <div class="restaurant-card">
+                    <img src="images/pueblitoPaisa-1.jpg" alt="Restaurante Tradición Paisa">
+                    <h3>aaaaaaaaaa</h3>
+                    <div class="location">
+                        <img src="images/ubicacion.png" alt="Ubicación">
+                        <p>Cerro morro solar, peru</p>
+                    </div>
+                </div>
+                <div class="restaurant-card">
+                    <img src="images/pueblitoPaisa-1.jpg" alt="Restaurante Tradición Paisa">
+                    <h3>Restaurante Tradición Paisa</h3>
+                    <div class="location">
+                        <img src="images/ubicacion.png" alt="Ubicación">
+                        <p>Cerro Nutibara, Medellín, Antioquía, Colombia.</p>
+                    </div>
+                </div>
+                <div class="restaurant-card">
+                    <img src="images/pueblitoPaisa-1.jpg" alt="Restaurante Tradición Paisa">
+                    <h3>Restaurante Tradición Paisa</h3>
+                    <div class="location">
+                        <img src="images/ubicacion.png" alt="Ubicación">
+                        <p>Cerro Nutibara, Medellín, Antioquía, Colombia.</p>
+                    </div>
+                </div>
+                <div class="restaurant-card">
+                    <img src="images/pueblitoPaisa-1.jpg" alt="Restaurante Tradición Paisa">
+                    <h3>Restaurante Tradición Paisa</h3>
+                    <div class="location">
+                        <img src="images/ubicacion.png" alt="Ubicación">
+                        <p>Cerro Nutibara, Medellín, Antioquía, Colombia.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    
+
+    <!-- Vista del perfil -->
+    <section id="perfil-view" class="view" style="display: none;">
+        <div class="header">
+            <nav>
+                <img src="images/goonogo copia.png" alt="Logo Goonogo" class="logo">
+                <ul>
+                    <li><a href="#main" id="lugares-btn">Lugares</a></li>
+                    <li><a href="#misrutas" id="misrutas-btn">Mis rutas</a></li>
+                    <li><a href="#perfil" id="perfil-btn">Perfil</a></li>
+                </ul>
+            </nav>
+        </div>
+    <div >
+            <h1>Perfil</h1>
+            <div class="profile-picture">
+                <!-- Imagen del perfil -->
+                <img src="images/pueblitoPaisa-1.jpg" alt="Imagen de perfil" class="profile-image">
+            </div>
+            <div class="profile-info">
+                <br>Usuario<br>
+                <h3 id="profile-name"></h3> <!-- Aquí aparecerán el nombre y apellido -->
+                <br>
+                <p id="profile-email"></p> <!-- Aquí aparecerá el correo -->
+            </div>
+            <br>
+            <h4>Insignias acumuladas</h4>
+            <div class="badges">
+                <div>
+                    <p>Turista Emperador</p>
+                    <!-- Lugar para las insignias de Turista Emperador -->
+                    <div class="badge-grid">
+                        <div class="badge"></div>
+                        <div class="badge"></div>
+                        <div class="badge"></div>
+                    </div>
+                </div>
+                <br>
+                <div>
+                    <p>Explorador Supremo</p>
+                    <!-- Lugar para las insignias de Explorador Supremo -->
+                    <div class="badge-grid">
+                        <div class="badge"></div>
+                        <div class="badge"></div>
+                    </div>
+                </div>
+                <br>
+                <div>
+                    <p>Aventurero Élite</p>
+                    <!-- Lugar para las insignias de Aventurero Élite -->
+                    <div class="badge-grid">
+                        <div class="badge"></div>
+                        <div class="badge"></div>
+                        <div class="badge"></div>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <!-- Botón para cerrar sesión -->
+            <button class="logout-button">Cerrar sesión</button>
+        </div>
+    </div>
+</section>
+    <script src="js/main.js"></script>
+</body>
+</html>
