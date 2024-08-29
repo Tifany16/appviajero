@@ -49,6 +49,9 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 
+
+
+
     // Función para actualizar la vista de la ruta del usuario
     function updateRouteView() {
         const rutaContainer = document.getElementById("rutas-container");
@@ -78,7 +81,6 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 
-    // Event listeners
 
     // Botón "Agregar" en Pueblito Paisa
     const agregarBtnPueblito = document.getElementById("agregar-btn-pueblito");
@@ -87,7 +89,15 @@ document.addEventListener("DOMContentLoaded", function () {
             addToRoute("Pueblito Paisa");
         });
     }
+    // Botón "Agregar" en Comuna 13
+const agregarBtnComuna13 = document.getElementById("agregar-btn-comuna13");
+if (agregarBtnComuna13) {
+    agregarBtnComuna13.addEventListener("click", function () {
+        addToRoute("Comuna 13");
+    });
+}
 
+    
     // Navegación a la vista de Mis Rutas
     const misrutasBtn = document.querySelector('nav ul li a[href="#misrutas"]');
     if (misrutasBtn) {
@@ -184,7 +194,7 @@ document.addEventListener("DOMContentLoaded", function () {
             showView("restaurantesView");
         });
     }
-
+``
     // Navegación a la vista de Restaurantes2 desde Comuna 13
     const restaurantes2Button = document.getElementById("restaurantes2-btn");
     if (restaurantes2Button) {
@@ -193,24 +203,111 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
-    // Navegación a la vista de Perfil y mostrar datos del perfil
-    const perfilBtn = document.querySelector('nav ul li a[href="#perfil"]');
-    if (perfilBtn) {
-        perfilBtn.addEventListener("click", function (event) {
-            event.preventDefault();
-            showView("perfilView");
-            // Mostrar datos del perfil
-            document.getElementById("profile-name").textContent =
-                localStorage.getItem("nombre") + " " + localStorage.getItem("apellido");
-            document.getElementById("profile-email").textContent = "Correo: " + localStorage.getItem("email");
-        });
-    }
+     // Navegación a la vista de Perfil y mostrar datos del perfil
+     const perfilBtn = document.querySelector('nav ul li a[href="#perfil"]');
+     if (perfilBtn) {
+         perfilBtn.addEventListener("click", function(event) {
+             event.preventDefault();
+             showView("perfilView");
+             // Mostrar datos del perfil
+             document.getElementById("profile-name").textContent = localStorage.getItem("nombre") + " " + localStorage.getItem("apellido");
+             document.getElementById("profile-email").textContent = "Correo: " + localStorage.getItem("email");
+         });
+     }
 
     // Cerrar sesión
     const logoutButton = document.querySelector(".logout-button");
     if (logoutButton) {
         logoutButton.addEventListener("click", function () {
             showView("loginForm");
+        });
+    }
+
+    // Función para añadir un lugar a la ruta del usuario
+    function addToRoute(lugar) {
+        if (!userRoute.includes(lugar)) {
+            userRoute.push(lugar);
+            localStorage.setItem("userRoute", JSON.stringify(userRoute));
+            alert(`${lugar} ha sido añadido a tu ruta.`);
+            updateRouteView();
+        } else {
+            alert(`${lugar} ya está en tu ruta.`);
+        }
+    }
+
+    // Función para actualizar la vista de la ruta del usuario
+    function updateRouteView() {
+        const rutaContainer = document.getElementById("rutas-container");
+        if (rutaContainer) {
+            rutaContainer.innerHTML = ""; // Limpiar el contenedor
+
+            userRoute.forEach((lugar, index) => {
+                const lugarElement = document.createElement("div");
+                lugarElement.classList.add("lugar-ruta");
+
+                const nombreLugar = document.createElement("p");
+                nombreLugar.textContent = lugar;
+
+                lugarElement.appendChild(nombreLugar);
+                rutaContainer.appendChild(lugarElement);
+
+                // Agregar línea de tiempo si no es el último elemento
+                if (index < userRoute.length - 1) {
+                    const line = document.createElement("div");
+                    line.classList.add("linea-tiempo");
+                    const marker = document.createElement("div");
+                    marker.classList.add("marcador");
+                    line.appendChild(marker);
+                    rutaContainer.appendChild(line);
+                }
+            });
+        }
+    }
+
+     // Función para mostrar la ventana emergente de validación
+     function showValidationPopup() {
+        const popup = document.getElementById("validacion-popup");
+        const lista = document.getElementById("validacion-lista");
+        lista.innerHTML = "";
+
+        userRoute.forEach(lugar => {
+            const li = document.createElement("li");
+            li.innerHTML = `
+                <span>${lugar}</span>
+                <input type="checkbox" class="lugar-checkbox">
+            `;
+            lista.appendChild(li);
+        });
+
+        popup.style.display = "flex";
+    }
+
+    // Función para cerrar la ventana emergente de validación
+    function closeValidationPopup() {
+        const popup = document.getElementById("validacion-popup");
+        popup.style.display = "none";
+    }
+
+    // Event listener para el botón de validar
+    const validarBtn = document.getElementById("validar-btn");
+    if (validarBtn) {
+        validarBtn.addEventListener("click", showValidationPopup);
+    }
+
+    // Event listener para el botón de cerrar la ventana emergente
+    const cerrarPopupBtn = document.getElementById("cerrar-popup");
+    if (cerrarPopupBtn) {
+        cerrarPopupBtn.addEventListener("click", closeValidationPopup);
+    }
+
+    // Event listener para el botón de confirmar validación
+    const confirmarValidacionBtn = document.getElementById("confirmar-validacion");
+    if (confirmarValidacionBtn) {
+        confirmarValidacionBtn.addEventListener("click", function() {
+            alert("¡Felicidades! Has ganado una estrella por completar tu ruta.");
+            closeValidationPopup();
+            showView("misrutasView");
+            updateRouteView();
         });
     }
 });

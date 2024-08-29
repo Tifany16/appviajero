@@ -131,23 +131,32 @@
         </div>
     </section>
 
-    <!-- Sección de mis rutas -->
+
     <section id="misrutas-view" class="view" style="display:none;">
         <nav>
-            <img src="images/goonogo copia.png" alt="Logo Goonogo" class="logo">
-            <ul>
-                <li><a href="#main" id="lugares-btn">Lugares</a></li>
-                <li><a href="#misrutas" id="misrutas-btn">Mis rutas</a></li>
-                <li><a href="#perfil" id="perfil-btn">Perfil</a></li>
-            </ul>
+            <!-- ... (contenido de la navegación) ... -->
         </nav>
-
-            <h2>Mis Rutas</h2>
-            <div id="rutas-container"></div>
-        
+    
+        <h2>Mis Rutas</h2>
+        <div class="ruta-horizontal" id="rutas-container">
+            <!-- Las rutas se generarán dinámicamente aquí -->
+        </div>
+        <button id="validar-btn" class="validar-btn">Validar</button>
+    
+        <!-- Ventana emergente de validación (movida dentro de misrutas-view) -->
+        <div id="validacion-popup" class="popup">
+            <div class="popup-content">
+                <h3>Validar Ruta</h3>
+                <ul id="validacion-lista">
+                    <!-- La lista de lugares se generará dinámicamente aquí -->
+                </ul>
+                <button id="confirmar-validacion">Confirmar</button>
+                <button id="cerrar-popup">Cerrar</button>
+            </div>
+        </div>
     </section>
 
-
+    
 
     <!-- Sección de Restaurantes -->
     <section class="view" id="restaurantes-view" style="display: none;">
